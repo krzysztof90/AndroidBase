@@ -21,14 +21,14 @@ namespace AndroidBase.UI
         {
         }
 
-        protected override int ResourceLayout => ResourcesStore.viewLineNumberLayout;
+        protected override int ResourceLayout => Resource.Layout.view_line_number;
 
         public override bool Enabled { get => editText.Enabled; set => editText.Enabled = value; }
 
         protected override void CreateControls()
         {
-            textView = FindViewById<TextView>(ResourcesStore.controlLabelId);
-            editText = FindViewById<EditText>(ResourcesStore.controlNumberId);
+            textView = FindViewById<TextView>(Resource.Id.controlLabel);
+            editText = FindViewById<EditText>(Resource.Id.controlNumber);
         }
 
         protected override void SetControlsProperties()

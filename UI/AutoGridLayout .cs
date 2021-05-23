@@ -27,7 +27,7 @@ namespace AndroidBase.UI
 
         private void Init(IAttributeSet attrs, int defStyleAttr)
         {
-            Android.Content.Res.TypedArray typedArray = Context.ObtainStyledAttributes(attrs, new int[] { ResourcesStore.columnCountAttribute, ResourcesStore.columnWidthAttribute });
+            Android.Content.Res.TypedArray typedArray = Context.ObtainStyledAttributes(attrs, new int[] { Resource.Attribute.columnCount, Resource.Attribute.columnWidth });
             DefaultColumnCount = typedArray.GetInt(0, 1);
             ColumnWidth = typedArray.GetDimension(1, 150);
             typedArray.Recycle();

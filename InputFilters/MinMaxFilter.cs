@@ -14,7 +14,7 @@ namespace AndroidBase.InputFilters
             Max = maxValue;
         }
 
-        protected override string ValidationMessage => System.String.Format(Context.Resources.GetString(ResourcesStore.allowedRangeText), Min, Max);
+        protected override string ValidationMessage => System.String.Format(Context.Resources.GetString(Resource.String.allowed_range), Min, Max);
 
         protected override bool ValidateNumber(string text, bool validateFull, int? defaultValue = null, string fieldName = null)
         {

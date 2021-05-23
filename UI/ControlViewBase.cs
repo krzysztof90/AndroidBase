@@ -33,7 +33,7 @@ namespace AndroidBase.UI
             Inflate(context, ResourceLayout, this);
 
             //Must be alphabetically
-            TypedArray typedArray = context.ObtainStyledAttributes(attrs, new int[] { ResourcesStore.labelColorAttribute, ResourcesStore.labelValueAttribute });
+            TypedArray typedArray = context.ObtainStyledAttributes(attrs, new int[] { Resource.Attribute.labelColor, Resource.Attribute.labelValue });
             string label = typedArray.GetText(1);
             ColorStateList color = typedArray.GetColorStateList(0);
             typedArray.Recycle();

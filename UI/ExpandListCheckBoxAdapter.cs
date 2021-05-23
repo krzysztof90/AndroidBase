@@ -94,8 +94,8 @@ namespace AndroidBase.UI
             if (convertView == null)
             {
                 LayoutInflater inflater = (LayoutInflater)Context.GetSystemService(Context.LayoutInflaterService);
-                convertView = ResourcesStore.InflateMethod.Invoke(inflater, ResourcesStore.listExtensionModuleGroupLayout);
-                textView = convertView.FindViewById<TextView>(ResourcesStore.listTitleId);
+                convertView = inflater.Inflate(Resource.Layout.list_extensionmodule_group, null);
+                textView = convertView.FindViewById<TextView>(Resource.Id.listTitle);
                 textView.SetTypeface(null, TypefaceStyle.Bold);
                 convertView.Tag = textView;
             }
@@ -120,9 +120,9 @@ namespace AndroidBase.UI
                 if (convertView == null)
                 {
                     LayoutInflater inflater = (LayoutInflater)Context.GetSystemService(Context.LayoutInflaterService);
-                    convertView = ResourcesStore.InflateMethod.Invoke(inflater, ResourcesStore.listExtensionModuleItemLayout);
-                    checkBox = convertView.FindViewById<CheckBox>(ResourcesStore.expandedListItemId);
-                    imageView = convertView.FindViewById<ImageView>(ResourcesStore.expandedListItemImageId);
+                    convertView = inflater.Inflate(Resource.Layout.list_extensionmodule_item, null);
+                    checkBox = convertView.FindViewById<CheckBox>(Resource.Id.expandedListItem);
+                    imageView = convertView.FindViewById<ImageView>(Resource.Id.expandedListItemImage);
 
                     checkBox.Click += new EventHandler((object sender, EventArgs e) =>
                     {
@@ -161,9 +161,9 @@ namespace AndroidBase.UI
                 if (convertView == null)
                 {
                     LayoutInflater inflater = (LayoutInflater)Context.GetSystemService(Context.LayoutInflaterService);
-                    convertView = ResourcesStore.InflateMethod.Invoke(inflater, ResourcesStore.listExtensionModuleItemRadioButtonsLayout);
-                    radioButton = convertView.FindViewById<RadioButton>(ResourcesStore.expandedListItemId);
-                    imageView = convertView.FindViewById<ImageView>(ResourcesStore.expandedListItemImageId);
+                    convertView = inflater.Inflate(Resource.Layout.list_extensionmodule_item_radiobuttons, null);
+                    radioButton = convertView.FindViewById<RadioButton>(Resource.Id.expandedListItem);
+                    imageView = convertView.FindViewById<ImageView>(Resource.Id.expandedListItemImage);
 
                     radioButton.Click += new EventHandler((object sender, EventArgs e) =>
                     {

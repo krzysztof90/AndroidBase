@@ -1,0 +1,4 @@
+<resources>
+  <string name="allowed_range">Allowed range is {0} - {1}</string>
+  <string name="except_range">Not allowed number</string>
+</resources>

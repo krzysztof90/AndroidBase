@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F0C75B5C-FD71-4035-ABC5-CF4902F6FCEF}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AndroidBase</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AssemblyName>AndroidBase</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,36 +39,140 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Java.Interop">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\Java.Interop.dll</HintPath>
-    </Reference>
+    <Reference Include="Java.Interop" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\AlhambraScoringAndroid\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="Mono.Android">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v11.0\Mono.Android.dll</HintPath>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.AndroidX.Activity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Activity.1.2.0.1\lib\monoandroid90\Xamarin.AndroidX.Activity.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.AndroidX.Activity">
-      <HintPath>..\..\..\..\.nuget\packages\xamarin.androidx.activity\1.2.0.1\lib\monoandroid90\Xamarin.AndroidX.Activity.dll</HintPath>
+    <Reference Include="Xamarin.AndroidX.Annotation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.1.1.0.9\lib\monoandroid90\Xamarin.AndroidX.Annotation.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.AndroidX.AppCompat">
-      <HintPath>..\..\..\..\.nuget\packages\xamarin.androidx.appcompat\1.2.0.7\lib\monoandroid90\Xamarin.AndroidX.AppCompat.dll</HintPath>
+    <Reference Include="Xamarin.AndroidX.Annotation.Experimental, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.Experimental.1.0.0.9\lib\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.AndroidX.Core">
-      <HintPath>..\..\..\..\.nuget\packages\xamarin.androidx.core\1.3.2.3\lib\monoandroid90\Xamarin.AndroidX.Core.dll</HintPath>
+    <Reference Include="Xamarin.AndroidX.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.1.2.0.7\lib\monoandroid90\Xamarin.AndroidX.AppCompat.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.AndroidX.Fragment">
-      <HintPath>..\..\..\..\.nuget\packages\xamarin.androidx.fragment\1.3.0.1\lib\monoandroid90\Xamarin.AndroidX.Fragment.dll</HintPath>
+    <Reference Include="Xamarin.AndroidX.AppCompat.AppCompatResources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.AppCompatResources.1.2.0.7\lib\monoandroid90\Xamarin.AndroidX.AppCompat.AppCompatResources.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Arch.Core.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Arch.Core.Common.2.1.0.8\lib\monoandroid90\Xamarin.AndroidX.Arch.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Browser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Browser.1.3.0\lib\monoandroid90\Xamarin.AndroidX.Browser.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.CardView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CardView.1.0.0.8\lib\monoandroid90\Xamarin.AndroidX.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Collection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Collection.1.1.0.7\lib\monoandroid90\Xamarin.AndroidX.Collection.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.ConstraintLayout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.2.0.4.2\lib\monoandroid90\Xamarin.AndroidX.ConstraintLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.ConstraintLayout.Solver, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.2\lib\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Solver.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.CoordinatorLayout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CoordinatorLayout.1.1.0.7\lib\monoandroid90\Xamarin.AndroidX.CoordinatorLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Core.1.3.2.3\lib\monoandroid90\Xamarin.AndroidX.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.CursorAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CursorAdapter.1.0.0.7\lib\monoandroid90\Xamarin.AndroidX.CursorAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.CustomView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CustomView.1.1.0.6\lib\monoandroid90\Xamarin.AndroidX.CustomView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.DocumentFile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DocumentFile.1.0.1.7\lib\monoandroid90\Xamarin.AndroidX.DocumentFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.DrawerLayout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DrawerLayout.1.1.1.2\lib\monoandroid90\Xamarin.AndroidX.DrawerLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.DynamicAnimation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DynamicAnimation.1.0.0.7\lib\monoandroid90\Xamarin.AndroidX.DynamicAnimation.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Fragment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Fragment.1.3.0.1\lib\monoandroid90\Xamarin.AndroidX.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Interpolator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Interpolator.1.0.0.7\lib\monoandroid90\Xamarin.AndroidX.Interpolator.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Legacy.Support.Core.Utils.1.0.0.7\lib\monoandroid90\Xamarin.AndroidX.Legacy.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Lifecycle.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Common.2.3.0.1\lib\monoandroid90\Xamarin.AndroidX.Lifecycle.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Lifecycle.LiveData.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.LiveData.Core.2.3.0.1\lib\monoandroid90\Xamarin.AndroidX.Lifecycle.LiveData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Lifecycle.Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Runtime.2.3.0.1\lib\monoandroid90\Xamarin.AndroidX.Lifecycle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Lifecycle.ViewModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModel.2.3.0.1\lib\monoandroid90\Xamarin.AndroidX.Lifecycle.ViewModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Lifecycle.ViewModelSavedState, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.2.3.0.1\lib\monoandroid90\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Loader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Loader.1.1.0.7\lib\monoandroid90\Xamarin.AndroidX.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.LocalBroadcastManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.LocalBroadcastManager.1.0.0.7\lib\monoandroid90\Xamarin.AndroidX.LocalBroadcastManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.MultiDex, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.MultiDex.2.0.1.5\lib\monoandroid90\Xamarin.AndroidX.MultiDex.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Print, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Print.1.0.0.7\lib\monoandroid90\Xamarin.AndroidX.Print.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.RecyclerView.1.1.0.8\lib\monoandroid90\Xamarin.AndroidX.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.SavedState, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.SavedState.1.1.0.1\lib\monoandroid90\Xamarin.AndroidX.SavedState.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.Transition, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Transition.1.4.0.1\lib\monoandroid90\Xamarin.AndroidX.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.VectorDrawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.1.1.0.7\lib\monoandroid90\Xamarin.AndroidX.VectorDrawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.VectorDrawable.Animated, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.Animated.1.1.0.7\lib\monoandroid90\Xamarin.AndroidX.VectorDrawable.Animated.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.VersionedParcelable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VersionedParcelable.1.1.1.7\lib\monoandroid90\Xamarin.AndroidX.VersionedParcelable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.ViewPager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager.1.0.0.7\lib\monoandroid90\Xamarin.AndroidX.ViewPager.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.AndroidX.ViewPager2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager2.1.0.0.9\lib\monoandroid90\Xamarin.AndroidX.ViewPager2.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.Essentials.1.6.1\lib\netstandard2.0\Xamarin.Essentials.dll</HintPath>
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.Essentials.1.6.1\lib\monoandroid10.0\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Google.Android.Material, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.Google.Android.Material.1.3.0.1\lib\monoandroid90\Xamarin.Google.Android.Material.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Google.Guava.ListenableFuture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\AlhambraScoringAndroid\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.2\lib\monoandroid50\Xamarin.Google.Guava.ListenableFuture.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -75,7 +187,6 @@
     <Compile Include="InputFilters\MinMaxFilter.cs" />
     <Compile Include="InputFilters\NumberFilter.cs" />
     <Compile Include="InputFilters\TextFilter.cs" />
-    <Compile Include="ResourcesStore.cs" />
     <Compile Include="UI\AutoGridLayout .cs" />
     <Compile Include="UI\ControlCheckBoxView.cs" />
     <Compile Include="UI\ControlNumberView.cs" />
@@ -92,8 +203,146 @@
     <Compile Include="Tools\ValidateUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <Compile Include="Resources\Resource.designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\view_line_number.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\view_line_checkbox.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\list_extensionmodule_group.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\list_extensionmodule_item.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\list_extensionmodule_item_radiobuttons.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\attrs.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\strings.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.MultiDex.2.0.1.5\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.MultiDex.2.0.1.5\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.MultiDex.2.0.1.5\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.MultiDex.2.0.1.5\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.2\build\monoandroid50\Xamarin.Google.Guava.ListenableFuture.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.2\build\monoandroid50\Xamarin.Google.Guava.ListenableFuture.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Browser.1.3.0\build\monoandroid90\Xamarin.AndroidX.Browser.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Browser.1.3.0\build\monoandroid90\Xamarin.AndroidX.Browser.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.Experimental.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.Experimental.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.Experimental.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.Experimental.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.Solver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.Solver.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.1.1.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.1.1.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Arch.Core.Common.2.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.Arch.Core.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Arch.Core.Common.2.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.Arch.Core.Common.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CardView.1.0.0.8\build\monoandroid9.0\Xamarin.AndroidX.CardView.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CardView.1.0.0.8\build\monoandroid9.0\Xamarin.AndroidX.CardView.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Collection.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Collection.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Collection.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Collection.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CursorAdapter.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.CursorAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CursorAdapter.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.CursorAdapter.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DocumentFile.1.0.1.7\build\monoandroid9.0\Xamarin.AndroidX.DocumentFile.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DocumentFile.1.0.1.7\build\monoandroid9.0\Xamarin.AndroidX.DocumentFile.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Interpolator.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Interpolator.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Interpolator.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Interpolator.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Common.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Common.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Common.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.LiveData.Core.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.LiveData.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.LiveData.Core.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.LiveData.Core.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Runtime.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Runtime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Runtime.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Runtime.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModel.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModel.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModel.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.LocalBroadcastManager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.LocalBroadcastManager.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.LocalBroadcastManager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.LocalBroadcastManager.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Print.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Print.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Print.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Print.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.SavedState.1.1.0.1\build\monoandroid9.0\Xamarin.AndroidX.SavedState.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.SavedState.1.1.0.1\build\monoandroid9.0\Xamarin.AndroidX.SavedState.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VersionedParcelable.1.1.1.7\build\monoandroid9.0\Xamarin.AndroidX.VersionedParcelable.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VersionedParcelable.1.1.1.7\build\monoandroid9.0\Xamarin.AndroidX.VersionedParcelable.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Core.1.3.2.3\build\monoandroid9.0\Xamarin.AndroidX.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Core.1.3.2.3\build\monoandroid9.0\Xamarin.AndroidX.Core.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Activity.1.2.0.1\build\monoandroid9.0\Xamarin.AndroidX.Activity.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Activity.1.2.0.1\build\monoandroid9.0\Xamarin.AndroidX.Activity.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CustomView.1.1.0.6\build\monoandroid9.0\Xamarin.AndroidX.CustomView.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CustomView.1.1.0.6\build\monoandroid9.0\Xamarin.AndroidX.CustomView.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CoordinatorLayout.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.CoordinatorLayout.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CoordinatorLayout.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.CoordinatorLayout.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DrawerLayout.1.1.1.2\build\monoandroid9.0\Xamarin.AndroidX.DrawerLayout.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DrawerLayout.1.1.1.2\build\monoandroid9.0\Xamarin.AndroidX.DrawerLayout.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Loader.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Loader.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Loader.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Loader.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Legacy.Support.Core.Utils.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Legacy.Support.Core.Utils.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Legacy.Support.Core.Utils.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Legacy.Support.Core.Utils.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DynamicAnimation.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.DynamicAnimation.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DynamicAnimation.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.DynamicAnimation.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.RecyclerView.1.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.RecyclerView.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.RecyclerView.1.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.RecyclerView.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.Animated.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.Animated.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.Animated.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.Animated.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.AppCompatResources.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.AppCompatResources.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.AppCompatResources.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.AppCompatResources.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.ViewPager.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.ViewPager.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Fragment.1.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Fragment.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Fragment.1.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Fragment.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Transition.1.4.0.1\build\monoandroid9.0\Xamarin.AndroidX.Transition.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Transition.1.4.0.1\build\monoandroid9.0\Xamarin.AndroidX.Transition.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager2.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.ViewPager2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager2.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.ViewPager2.targets'))" />
+    <Error Condition="!Exists('..\AlhambraScoringAndroid\packages\Xamarin.Google.Android.Material.1.3.0.1\build\monoandroid9.0\Xamarin.Google.Android.Material.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AlhambraScoringAndroid\packages\Xamarin.Google.Android.Material.1.3.0.1\build\monoandroid9.0\Xamarin.Google.Android.Material.targets'))" />
+  </Target>
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.2\build\monoandroid50\Xamarin.Google.Guava.ListenableFuture.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.2\build\monoandroid50\Xamarin.Google.Guava.ListenableFuture.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Browser.1.3.0\build\monoandroid90\Xamarin.AndroidX.Browser.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Browser.1.3.0\build\monoandroid90\Xamarin.AndroidX.Browser.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.Experimental.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.Experimental.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.Experimental.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.Experimental.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.Solver.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.Solver.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.1.1.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Annotation.1.1.0.9\build\monoandroid9.0\Xamarin.AndroidX.Annotation.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Arch.Core.Common.2.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.Arch.Core.Common.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Arch.Core.Common.2.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.Arch.Core.Common.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CardView.1.0.0.8\build\monoandroid9.0\Xamarin.AndroidX.CardView.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CardView.1.0.0.8\build\monoandroid9.0\Xamarin.AndroidX.CardView.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Collection.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Collection.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Collection.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Collection.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CursorAdapter.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.CursorAdapter.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CursorAdapter.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.CursorAdapter.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DocumentFile.1.0.1.7\build\monoandroid9.0\Xamarin.AndroidX.DocumentFile.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DocumentFile.1.0.1.7\build\monoandroid9.0\Xamarin.AndroidX.DocumentFile.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Interpolator.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Interpolator.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Interpolator.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Interpolator.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Common.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Common.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Common.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Common.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.LiveData.Core.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.LiveData.Core.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.LiveData.Core.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.LiveData.Core.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Runtime.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Runtime.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.Runtime.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.Runtime.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModel.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModel.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModel.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModel.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.LocalBroadcastManager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.LocalBroadcastManager.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.LocalBroadcastManager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.LocalBroadcastManager.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Print.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Print.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Print.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Print.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.SavedState.1.1.0.1\build\monoandroid9.0\Xamarin.AndroidX.SavedState.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.SavedState.1.1.0.1\build\monoandroid9.0\Xamarin.AndroidX.SavedState.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.2.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VersionedParcelable.1.1.1.7\build\monoandroid9.0\Xamarin.AndroidX.VersionedParcelable.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VersionedParcelable.1.1.1.7\build\monoandroid9.0\Xamarin.AndroidX.VersionedParcelable.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Core.1.3.2.3\build\monoandroid9.0\Xamarin.AndroidX.Core.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Core.1.3.2.3\build\monoandroid9.0\Xamarin.AndroidX.Core.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Activity.1.2.0.1\build\monoandroid9.0\Xamarin.AndroidX.Activity.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Activity.1.2.0.1\build\monoandroid9.0\Xamarin.AndroidX.Activity.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CustomView.1.1.0.6\build\monoandroid9.0\Xamarin.AndroidX.CustomView.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CustomView.1.1.0.6\build\monoandroid9.0\Xamarin.AndroidX.CustomView.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CoordinatorLayout.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.CoordinatorLayout.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.CoordinatorLayout.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.CoordinatorLayout.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DrawerLayout.1.1.1.2\build\monoandroid9.0\Xamarin.AndroidX.DrawerLayout.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DrawerLayout.1.1.1.2\build\monoandroid9.0\Xamarin.AndroidX.DrawerLayout.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Loader.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Loader.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Loader.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.Loader.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Legacy.Support.Core.Utils.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Legacy.Support.Core.Utils.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Legacy.Support.Core.Utils.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.Legacy.Support.Core.Utils.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DynamicAnimation.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.DynamicAnimation.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.DynamicAnimation.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.DynamicAnimation.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.RecyclerView.1.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.RecyclerView.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.RecyclerView.1.1.0.8\build\monoandroid9.0\Xamarin.AndroidX.RecyclerView.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.Animated.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.Animated.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.VectorDrawable.Animated.1.1.0.7\build\monoandroid9.0\Xamarin.AndroidX.VectorDrawable.Animated.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.AppCompatResources.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.AppCompatResources.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.AppCompatResources.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.AppCompatResources.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.ViewPager.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager.1.0.0.7\build\monoandroid9.0\Xamarin.AndroidX.ViewPager.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Fragment.1.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Fragment.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Fragment.1.3.0.1\build\monoandroid9.0\Xamarin.AndroidX.Fragment.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.AppCompat.1.2.0.7\build\monoandroid9.0\Xamarin.AndroidX.AppCompat.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ConstraintLayout.2.0.4.2\build\monoandroid9.0\Xamarin.AndroidX.ConstraintLayout.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Transition.1.4.0.1\build\monoandroid9.0\Xamarin.AndroidX.Transition.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.Transition.1.4.0.1\build\monoandroid9.0\Xamarin.AndroidX.Transition.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager2.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.ViewPager2.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.AndroidX.ViewPager2.1.0.0.9\build\monoandroid9.0\Xamarin.AndroidX.ViewPager2.targets')" />
+  <Import Project="..\AlhambraScoringAndroid\packages\Xamarin.Google.Android.Material.1.3.0.1\build\monoandroid9.0\Xamarin.Google.Android.Material.targets" Condition="Exists('..\AlhambraScoringAndroid\packages\Xamarin.Google.Android.Material.1.3.0.1\build\monoandroid9.0\Xamarin.Google.Android.Material.targets')" />
 </Project>

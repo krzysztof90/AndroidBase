@@ -6,11 +6,8 @@ namespace AndroidBase
 {
     public abstract class AndroidBaseApplication : Application
     {
-        public abstract void SetResourcesStore();
-
         public AndroidBaseApplication(IntPtr javaReference, Android.Runtime.JniHandleOwnership transfer) : base(javaReference, transfer)
         {
-            SetResourcesStore();
         }
         public override void OnCreate()
         {

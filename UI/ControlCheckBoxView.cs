@@ -15,13 +15,13 @@ namespace AndroidBase.UI
         {
         }
 
-        protected override int ResourceLayout => ResourcesStore.viewLineCheckboxLayout;
+        protected override int ResourceLayout => Resource.Layout.view_line_checkbox;
 
         public override bool Enabled { get => scoreLineCheckBox.Enabled; set => scoreLineCheckBox.Enabled = value; }
 
         protected override void CreateControls()
         {
-            scoreLineCheckBox = FindViewById<CheckBox>(ResourcesStore.controlCheckBoxId);
+            scoreLineCheckBox = FindViewById<CheckBox>(Resource.Id.controlCheckBox);
         }
 
         protected override void SetControlsProperties()

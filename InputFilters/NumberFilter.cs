@@ -13,7 +13,7 @@ namespace AndroidBase.InputFilters
             Numbers = numbers;
         }
 
-        protected override string ValidationMessage => Context.Resources.GetString(ResourcesStore.exceptRangeText);
+        protected override string ValidationMessage => Context.Resources.GetString(Resource.String.except_range);
 
         protected override bool ValidateNumber(string text, bool validateFull, int? defaultValue = null, string fieldName = null)
         {
@@ -27,7 +27,7 @@ namespace AndroidBase.InputFilters
                 else
                     return ValidationError(fieldName);
             }
-
+            
             return ValidateEmptyValue(((int)defaultValue).ToString(), validateFull, defaultValue, fieldName);
         }
     }
