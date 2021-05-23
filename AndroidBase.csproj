@@ -76,6 +76,7 @@
     <Compile Include="InputFilters\NumberFilter.cs" />
     <Compile Include="InputFilters\TextFilter.cs" />
     <Compile Include="ResourcesStore.cs" />
+    <Compile Include="UI\AutoGridLayout .cs" />
     <Compile Include="UI\ControlCheckBoxView.cs" />
     <Compile Include="UI\ControlNumberView.cs" />
     <Compile Include="UI\ControlViewBase.cs" />

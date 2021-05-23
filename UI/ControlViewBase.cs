@@ -22,6 +22,7 @@ namespace AndroidBase.UI
         protected abstract void CreateControls();
         protected abstract void SetControlsProperties();
         public abstract void SetLabel(string label);
+        public abstract void SetTooltip(string label);
         public abstract void SetColor(ColorStateList color);
         protected abstract void SetValue(T? value);
         protected abstract T? GetValue();
@@ -42,6 +43,8 @@ namespace AndroidBase.UI
             CreateControls();
             SetControlsProperties();
             SetLabel(label);
+            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.NMr1)
+                SetTooltip(label);
             SetColor(color);
         }
 

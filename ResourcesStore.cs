@@ -23,6 +23,8 @@ namespace AndroidBase
 
         public static int labelColorAttribute;
         public static int labelValueAttribute;
+        public static int columnCountAttribute;
+        public static int columnWidthAttribute;
 
         //TODO problem with references
         public static Func<LayoutInflater, int, View> InflateMethod;

@@ -38,6 +38,11 @@ namespace AndroidBase.UI
             scoreLineCheckBox.Text = label;
         }
 
+        public override void SetTooltip(string label)
+        {
+            scoreLineCheckBox.TooltipText = label;
+        }
+
         public override void SetColor(ColorStateList color)
         {
             if (color != null)

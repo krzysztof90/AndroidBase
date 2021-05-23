@@ -66,6 +66,11 @@ namespace AndroidBase.UI
             textView.Text = label;
         }
 
+        public override void SetTooltip(string label)
+        {
+            textView.TooltipText = label;
+        }
+
         public override void SetColor(ColorStateList color)
         {
             if (color != null)
