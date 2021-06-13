@@ -13,6 +13,7 @@ namespace AndroidBase
 
         protected abstract int ToolbarResource { get; }
         protected abstract int MainMenuResource { get; }
+        protected virtual bool ShowBackButton => true;
         protected abstract Dictionary<int, Action> MenuActions { get; }
 
         protected abstract int ContentView { get; }
@@ -23,6 +24,8 @@ namespace AndroidBase
             SetContentView(ContentView);
             Toolbar toolbar = FindViewById<Toolbar>(ToolbarResource);
             SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(ShowBackButton);
+            //SupportActionBar.SetDisplayShowHomeEnabled(ShowBackButton);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -39,6 +42,11 @@ namespace AndroidBase
             {
                 MenuActions[id].Invoke();
                 return true;
+            }
+
+            if (id == Android.Resource.Id.Home)
+            {
+                OnBackPressed();
             }
 
             return base.OnOptionsItemSelected(item);
