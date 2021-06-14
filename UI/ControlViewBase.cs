@@ -26,6 +26,7 @@ namespace AndroidBase.UI
         public abstract void SetColor(ColorStateList color);
         protected abstract void SetValue(T? value);
         protected abstract T? GetValue();
+        public abstract void SetFocus();
         public abstract new bool Enabled { get; set; }
 
         public ControlViewBase(Context context, IAttributeSet attrs) : base(context, attrs)
@@ -61,6 +62,12 @@ namespace AndroidBase.UI
         public void RestoreValue()
         {
             SetValue(StoredValue);
+        }
+
+        public void ResetValue()
+        {
+            SetValue(null);
+            AssignStoredValue();
         }
 
         public T Value

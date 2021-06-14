@@ -97,6 +97,11 @@ namespace AndroidBase.UI
             return Int32.Parse(text);
         }
 
+        public override void SetFocus()
+        {
+            editText.RequestFocus();
+        }
+
         public void SetNumberRange<SettingsType>(int min, int max, SettingsType? validationSettingsType) where SettingsType : struct, System.IComparable, System.IFormattable, System.IConvertible
         {
             List<IInputFilter> filters = editText.GetFilters().ToList();

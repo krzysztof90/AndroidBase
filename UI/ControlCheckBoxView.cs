@@ -64,5 +64,10 @@ namespace AndroidBase.UI
                 return null;
             return scoreLineCheckBox.Checked;
         }
+
+        public override void SetFocus()
+        {
+            scoreLineCheckBox.RequestFocus();
+        }
     }
 }
