@@ -1,5 +1,4 @@
 ﻿using Android.Content;
-using Android.Content.Res;
 using Android.Text;
 using Android.Util;
 using Android.Views;
@@ -23,7 +22,8 @@ namespace AndroidBase.UI
 
         protected override int ResourceLayout => Resource.Layout.view_line_number;
 
-        public override bool Enabled { get => editText.Enabled; set => editText.Enabled = value; }
+        protected override TextView LabelControl => textView;
+        protected override View InputControl => editText;
 
         protected override void CreateControls()
         {
@@ -33,7 +33,7 @@ namespace AndroidBase.UI
 
         protected override void SetControlsProperties()
         {
-            editText.TextChanged += new EventHandler<Android.Text.TextChangedEventArgs>((object sender, Android.Text.TextChangedEventArgs e) =>
+            editText.TextChanged += new EventHandler<TextChangedEventArgs>((object sender, TextChangedEventArgs e) =>
             {
                 bool restore = false;
                 bool handleTextChanged = false;
@@ -59,26 +59,6 @@ namespace AndroidBase.UI
 
                 OnValueChange?.Invoke();
             });
-        }
-
-        public override void SetLabel(string label)
-        {
-            textView.Text = label;
-        }
-
-        public override void SetTooltip(string label)
-        {
-            textView.TooltipText = label;
-        }
-
-        public override void SetColor(ColorStateList color)
-        {
-            if (color != null)
-            {
-                textView.SetTextColor(color);
-                if (color.DefaultColor == -658699 || color.DefaultColor == -1)
-                    textView.SetShadowLayer(1, 1, 1, Android.Graphics.Color.Black);
-            }
         }
 
         protected override void SetValue(int? value)

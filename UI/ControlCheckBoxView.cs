@@ -1,5 +1,4 @@
 ﻿using Android.Content;
-using Android.Content.Res;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -17,7 +16,8 @@ namespace AndroidBase.UI
 
         protected override int ResourceLayout => Resource.Layout.view_line_checkbox;
 
-        public override bool Enabled { get => scoreLineCheckBox.Enabled; set => scoreLineCheckBox.Enabled = value; }
+        protected override TextView LabelControl => scoreLineCheckBox;
+        protected override View InputControl => scoreLineCheckBox;
 
         protected override void CreateControls()
         {
@@ -31,26 +31,6 @@ namespace AndroidBase.UI
                 AssignStoredValue();
                 OnValueChange?.Invoke();
             });
-        }
-
-        public override void SetLabel(string label)
-        {
-            scoreLineCheckBox.Text = label;
-        }
-
-        public override void SetTooltip(string label)
-        {
-            scoreLineCheckBox.TooltipText = label;
-        }
-
-        public override void SetColor(ColorStateList color)
-        {
-            if (color != null)
-            {
-                scoreLineCheckBox.SetTextColor(color);
-                if (color.DefaultColor == -658699 || color.DefaultColor == -1)
-                    scoreLineCheckBox.SetShadowLayer(1, 1, 1, Android.Graphics.Color.Black);
-            }
         }
 
         protected override void SetValue(bool? value)

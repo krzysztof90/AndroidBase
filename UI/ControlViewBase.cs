@@ -1,6 +1,7 @@
 ﻿using Android.Content;
 using Android.Content.Res;
 using Android.Util;
+using Android.Views;
 using Android.Widget;
 using System;
 
@@ -19,15 +20,15 @@ namespace AndroidBase.UI
         public Action OnValueChange;
 
         protected abstract int ResourceLayout { get; }
+        protected abstract TextView LabelControl { get; }
+        protected abstract View InputControl { get; }
         protected abstract void CreateControls();
         protected abstract void SetControlsProperties();
-        public abstract void SetLabel(string label);
-        public abstract void SetTooltip(string label);
-        public abstract void SetColor(ColorStateList color);
         protected abstract void SetValue(T? value);
         protected abstract T? GetValue();
         public abstract void SetFocus();
-        public abstract new bool Enabled { get; set; }
+
+        public new bool Enabled { get => InputControl.Enabled; set => InputControl.Enabled = value; }
 
         public ControlViewBase(Context context, IAttributeSet attrs) : base(context, attrs)
         {
@@ -52,6 +53,26 @@ namespace AndroidBase.UI
         public void Initialize()
         {
             StoredValue = null;
+        }
+
+        public void SetLabel(string label)
+        {
+            LabelControl.Text = label;
+        }
+
+        public void SetTooltip(string label)
+        {
+            LabelControl.TooltipText = label;
+        }
+
+        public void SetColor(ColorStateList color)
+        {
+            if (color != null)
+            {
+                LabelControl.SetTextColor(color);
+                if (color.DefaultColor == -658699 || color.DefaultColor == -1)
+                    LabelControl.SetShadowLayer(1, 1, 1, Android.Graphics.Color.Black);
+            }
         }
 
         protected void AssignStoredValue()
