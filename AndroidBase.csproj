@@ -193,6 +193,8 @@
     <Compile Include="UI\ControlViewBase.cs" />
     <Compile Include="UI\DialogInterfaceOnClickListener.cs" />
     <Compile Include="UI\ExpandableListViewExtension.cs" />
+    <Compile Include="UI\ExpandListCheckBoxAdapterMultiple.cs" />
+    <Compile Include="UI\ExpandListCheckBoxAdapterSingle.cs" />
     <Compile Include="UI\ExpandListCheckBoxAdapter.cs" />
     <Compile Include="UI\ExpandListCheckBoxPosition.cs" />
     <Compile Include="Options\AndroidSettings.cs" />
