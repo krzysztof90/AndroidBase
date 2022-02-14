@@ -34,8 +34,7 @@ namespace AndroidBase.Attributes
             if (CreatedImages.ContainsKey(resource))
                 return CreatedImages[resource];
 
-            Bitmap result = BitmapFactory.DecodeResource(resources, resource/*, decodeSampledBitmapFromResource(resources, resource, 50, 50)*/);
-            //Bitmap result = BitmapFactory.DecodeResource(resources, resource);
+            Bitmap result = BitmapFactory.DecodeResource(resources, resource /*, decodeSampledBitmapFromResource(resources, resource, 50, 50)*/);
             double proportion = ((double)Math.Max(result.Height, result.Width)) / ImageMaxSize;
             if (proportion > 1)
             {

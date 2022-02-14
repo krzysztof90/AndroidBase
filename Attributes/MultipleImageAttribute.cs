@@ -16,7 +16,7 @@ namespace AndroidBase.Attributes
             Resources = resources;
         }
 
-        public override Android.Graphics.Bitmap Image(Resources resources)
+        public override Bitmap Image(Resources resources)
         {
             Bitmap result = null;
 
