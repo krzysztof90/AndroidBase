@@ -10,6 +10,10 @@ namespace AndroidBase.UI
     {
         private CheckBox scoreLineCheckBox;
 
+        public ControlCheckBoxView(Context context) : base(context)
+        {
+        }
+
         public ControlCheckBoxView(Context context, IAttributeSet attrs) : base(context, attrs)
         {
         }

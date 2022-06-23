@@ -1,5 +1,6 @@
 ﻿using Android.Content;
 using Android.Content.Res;
+using Android.OS;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -11,6 +12,9 @@ namespace AndroidBase.UI
     {
         void Initialize();
         void RestoreValue();
+
+        void SetValueObject(object value);
+        object GetValueObject();
     }
 
     public abstract class ControlViewBase<T> : LinearLayout, IControlViewBase where T : struct
@@ -30,6 +34,10 @@ namespace AndroidBase.UI
 
         public new bool Enabled { get => InputControl.Enabled; set => InputControl.Enabled = value; }
 
+        public ControlViewBase(Context context) : this(context, null)
+        {
+        }
+
         public ControlViewBase(Context context, IAttributeSet attrs) : base(context, attrs)
         {
             Inflate(context, ResourceLayout, this);
@@ -45,7 +53,7 @@ namespace AndroidBase.UI
             CreateControls();
             SetControlsProperties();
             SetLabel(label);
-            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.NMr1)
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.NMr1)
                 SetTooltip(label);
             SetColor(color);
         }
@@ -102,6 +110,16 @@ namespace AndroidBase.UI
                 SetValue(value);
                 AssignStoredValue();
             }
+        }
+
+        public void SetValueObject(object value)
+        {
+            Value = (T)value;
+        }
+
+        public object GetValueObject()
+        {
+            return Value;
         }
     }
 }

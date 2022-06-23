@@ -187,6 +187,7 @@
     <Compile Include="InputFilters\MinMaxFilter.cs" />
     <Compile Include="InputFilters\NumberFilter.cs" />
     <Compile Include="InputFilters\TextFilter.cs" />
+    <Compile Include="Tools\ViewOperations.cs" />
     <Compile Include="UI\AutoGridLayout .cs" />
     <Compile Include="UI\ControlCheckBoxView.cs" />
     <Compile Include="UI\ControlNumberView.cs" />

@@ -21,7 +21,7 @@ namespace AndroidBase.Tools
             return GetFieldAttribute(fieldInfo, defaultValue);
         }
 
-        private static T GetFieldAttribute<T>(MemberInfo memberInfo, T defaultValue = default)
+        public static T GetFieldAttribute<T>(this MemberInfo memberInfo, T defaultValue = default)
         {
             IEnumerable<T> attributes = (T[])memberInfo.GetCustomAttributes(typeof(T), false).Cast<T>();
 

@@ -16,6 +16,10 @@ namespace AndroidBase.UI
         private TextView textView;
         private EditText editText;
 
+        public ControlNumberView(Context context) : base(context)
+        {
+        }
+
         public ControlNumberView(Context context, IAttributeSet attrs) : base(context, attrs)
         {
         }
