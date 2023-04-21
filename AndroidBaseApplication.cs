@@ -14,10 +14,12 @@ namespace AndroidBase
             base.OnCreate();
         }
 
-        protected void NewActivity(Type activityType)
+        protected void NewActivity(Type activityType, params ActivityFlags[] activityFlags)
         {
             Intent intent = new Intent(ApplicationContext, activityType);
             intent.AddFlags(ActivityFlags.NewTask);
+            foreach (ActivityFlags flags in activityFlags)
+                intent.AddFlags(flags);
             StartActivity(intent);
         }
     }
