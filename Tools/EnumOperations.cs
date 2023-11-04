@@ -11,7 +11,11 @@ namespace AndroidBase.Tools
     {
         public static string GetEnumDescription<EnumType>(this EnumType value, Resources resources) where EnumType : struct, IConvertible, IComparable, IFormattable
         {
-            return resources.GetString(value.GetEnumAttribute<EnumType, DescriptionResourceAttribute>().Resource);
+            int resource = value.GetEnumAttribute<EnumType, DescriptionResourceAttribute>().Resource;
+
+            if (resource == 0)
+                return String.Empty;
+            return resources.GetString(resource);
         }
 
         public static T GetEnumAttribute<EnumType, T>(this EnumType value, T defaultValue = default) where EnumType : struct, IConvertible, IComparable, IFormattable
