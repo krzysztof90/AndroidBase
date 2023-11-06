@@ -13,14 +13,21 @@ namespace AndroidBase.UI
 
         public Dictionary<string, EnumType> SelectedList => ListSingleWithSelection.ToDictionary(d => d.Key, d => (EnumType)d.Value.Item2);
 
-        public ExpandListCheckBoxAdapterSingle(Context context, Dictionary<string, List<EnumType>> expandableListDetail) : base(context, expandableListDetail)
+        public ExpandListCheckBoxAdapterSingle(Context context, Dictionary<string, List<EnumType>> expandableListDetail) : this(context, expandableListDetail.ToDictionary(d => d.Key, d => (d.Value, default(EnumType?))))
         {
-            if (expandableListDetail.Any(d => d.Value.Distinct().Count() != d.Value.Count()))
+        }
+
+        public ExpandListCheckBoxAdapterSingle(Context context, Dictionary<string, (List<EnumType>, EnumType?)> expandableListDetail) : base(context, expandableListDetail.ToDictionary(d => d.Key, d => d.Value.Item1))
+        {
+            if (expandableListDetail.Any(d => d.Value.Item1.Distinct().Count() != d.Value.Item1.Count()))
                 throw new ArgumentException();
 
-            ListSingleWithSelection = expandableListDetail.ToDictionary(d => d.Key, d => (d.Value, default(EnumType?)));
+            ListSingleWithSelection = expandableListDetail.ToDictionary(d => d.Key, d => (d.Value.Item1, default(EnumType?)));
             for (int i = 0; i < ListSingleWithSelection.Count; i++)
-                ListSingleWithSelection[(string)GetGroup(i)] = (ListSingleWithSelection.ElementAt(0).Value.Item1, ListSingleWithSelection.ElementAt(0).Value.Item1.First());
+            {
+                EnumType? selectedValue = expandableListDetail.ElementAt(i).Value.Item2 ?? ListSingleWithSelection.ElementAt(i).Value.Item1.First();
+                ListSingleWithSelection[(string)GetGroup(i)] = (ListSingleWithSelection.ElementAt(i).Value.Item1, selectedValue);
+            }
         }
 
         public override EnumType GetChildObject(int groupPosition, int childPosition)

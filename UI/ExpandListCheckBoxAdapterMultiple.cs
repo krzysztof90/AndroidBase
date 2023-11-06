@@ -12,12 +12,16 @@ namespace AndroidBase.UI
 
         public IEnumerable<EnumType> SelectedList => ListMultipleWithSelections.SelectMany(d => d.Value).Where(d => d.Value).Select(d => d.Key);
 
-        public ExpandListCheckBoxAdapterMultiple(Context context, Dictionary<string, List<EnumType>> expandableListDetail) : base(context, expandableListDetail)
+        public ExpandListCheckBoxAdapterMultiple(Context context, Dictionary<string, List<EnumType>> expandableListDetail) : this(context, expandableListDetail.ToDictionary(d => d.Key, d => d.Value.Select(l => (l, false)).ToList()))
+        {
+        }
+
+        public ExpandListCheckBoxAdapterMultiple(Context context, Dictionary<string, List<(EnumType, bool)>> expandableListDetail) : base(context, expandableListDetail.ToDictionary(d => d.Key, d => d.Value.Select(l => l.Item1).ToList()))
         {
             if (expandableListDetail.SelectMany(d => d.Value).Distinct().Count() != expandableListDetail.SelectMany(d => d.Value).Count())
                 throw new ArgumentException();
 
-            ListMultipleWithSelections = expandableListDetail.ToDictionary(d => d.Key, d => d.Value.ToDictionary(l => l, l => false));
+            ListMultipleWithSelections = expandableListDetail.ToDictionary(d => d.Key, d => d.Value.ToDictionary(l => l.Item1, l => l.Item2));
         }
 
         public override EnumType GetChildObject(int groupPosition, int childPosition)
