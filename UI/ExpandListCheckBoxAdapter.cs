@@ -73,6 +73,14 @@ namespace AndroidBase.UI
 
         public override View GetChildView(int groupPosition, int childPosition, bool isLastChild, View convertView, ViewGroup parent)
         {
+            GetViewControls(ref convertView, groupPosition, childPosition);
+
+            childViews[groupPosition][childPosition] = convertView;
+            return convertView;
+        }
+
+        private (SelectControl selectControl, ImageView imageView) GetViewControls(ref View convertView, int groupPosition, int childPosition)
+        {
             //TODO szerokość imageView z argumentów
 
             SelectControl selectControl;
@@ -112,8 +120,12 @@ namespace AndroidBase.UI
             if (imageAttribute != null)
                 imageView.SetImageBitmap(imageAttribute.Image(Context.Resources));
 
-            childViews[groupPosition][childPosition] = convertView;
-            return convertView;
+            return (selectControl, imageView);
+        }
+
+        protected SelectControl GetSelectControl(int groupPosition, int childPosition)
+        {
+            return GetViewControls(ref childViews[groupPosition][childPosition], groupPosition, childPosition).selectControl;
         }
     }
 }

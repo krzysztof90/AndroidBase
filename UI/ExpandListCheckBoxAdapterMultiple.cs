@@ -10,7 +10,7 @@ namespace AndroidBase.UI
     {
         protected readonly Dictionary<string, Dictionary<EnumType, bool>> ListMultipleWithSelections;
 
-        public IEnumerable<EnumType> SelectedList => ListMultipleWithSelections.SelectMany(d => d.Value).Where(d => d.Value).Select(d => d.Key);
+        public IEnumerable<EnumType> SelectedList => ListMultipleWithSelections.SelectMany(d => d.Value).Where(d => d.Value).Select(d => d.Key).Distinct();
 
         public ExpandListCheckBoxAdapterMultiple(Context context, Dictionary<string, List<EnumType>> expandableListDetail) : this(context, expandableListDetail.ToDictionary(d => d.Key, d => d.Value.Select(l => (l, false)).ToList()))
         {
@@ -18,9 +18,6 @@ namespace AndroidBase.UI
 
         public ExpandListCheckBoxAdapterMultiple(Context context, Dictionary<string, List<(EnumType, bool)>> expandableListDetail) : base(context, expandableListDetail.ToDictionary(d => d.Key, d => d.Value.Select(l => l.Item1).ToList()))
         {
-            if (expandableListDetail.SelectMany(d => d.Value).Distinct().Count() != expandableListDetail.SelectMany(d => d.Value).Count())
-                throw new ArgumentException();
-
             ListMultipleWithSelections = expandableListDetail.ToDictionary(d => d.Key, d => d.Value.ToDictionary(l => l.Item1, l => l.Item2));
         }
 
@@ -45,7 +42,16 @@ namespace AndroidBase.UI
 
         protected override void SelectControlClick(CheckBox selectControl, EnumType key, int groupPosition, int childPosition)
         {
-            ListMultipleWithSelections.ElementAt(groupPosition).Value[key] = !ListMultipleWithSelections.ElementAt(groupPosition).Value[key];
+            KeyValuePair<string, Dictionary<EnumType, bool>> listElement = ListMultipleWithSelections.ElementAt(groupPosition);
+            listElement.Value[key] = !listElement.Value[key];
+
+            foreach (KeyValuePair<string, Dictionary<EnumType, bool>> anotherListElement in ListMultipleWithSelections.Where(l => l.Key != listElement.Key && l.Value.ContainsKey(key)))
+            {
+                anotherListElement.Value[key] = !anotherListElement.Value[key];
+                int groupPositionLocal = ListMultipleWithSelections.Keys.ToList().IndexOf(anotherListElement.Key);
+                int childPositionLocal = anotherListElement.Value.Keys.ToList().IndexOf(key);
+                GetSelectControl(groupPositionLocal, childPositionLocal).Checked = GetChecked(key, groupPositionLocal, childPositionLocal);
+            }
         }
 
         protected override bool GetChecked(EnumType key, int groupPosition, int childPosition)

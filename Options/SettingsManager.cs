@@ -34,14 +34,18 @@ namespace AndroidBase.Options
         {
             foreach (PropertyInfo field in resultObject.GetType().GetProperties().Where(p => p.GetFieldAttribute<System.Xml.Serialization.XmlAttributeAttribute>() != null))
             {
-                string valueString = node.SingleChildNode(GetAttributeName(field)).InnerText;
+                string valueString = node.SingleOrDefaultChildNode(GetAttributeName(field))?.InnerText;
 
                 object value = null;
                 Type fieldType = field.PropertyType;
                 if (Nullable.GetUnderlyingType(fieldType) != null)
                     fieldType = Nullable.GetUnderlyingType(fieldType);
 
-                if (fieldType.IsEnum)
+                if (valueString == null)
+                {
+                    value = fieldType.IsValueType ? Activator.CreateInstance(fieldType) : null;
+                }
+                else if (fieldType.IsEnum)
                 {
                     value = Enum.Parse(fieldType, valueString);
                 }
