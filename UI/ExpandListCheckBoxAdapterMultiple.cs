@@ -18,6 +18,9 @@ namespace AndroidBase.UI
 
         public ExpandListCheckBoxAdapterMultiple(Context context, Dictionary<string, List<(EnumType, bool)>> expandableListDetail) : base(context, expandableListDetail.ToDictionary(d => d.Key, d => d.Value.Select(l => l.Item1).ToList()))
         {
+            if (expandableListDetail.Any(d => d.Value.Select(v => v.Item1).Distinct().Count() != d.Value.Count()))
+                throw new ArgumentException();
+
             ListMultipleWithSelections = expandableListDetail.ToDictionary(d => d.Key, d => d.Value.ToDictionary(l => l.Item1, l => l.Item2));
         }
 
